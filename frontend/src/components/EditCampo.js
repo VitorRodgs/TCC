@@ -43,16 +43,24 @@ const EditCampo = () => {
                     />
                 </div>
 
-                <div className="field">
-                    <label className="label">Tipo</label>
-                    <input
-                        className="input"
+                <div>
+                    <label className="label">Tipo de Campo</label>
+                    <div className="select">
+                    <select
+                        required
                         type="text"
-                        placeholder="Digite o novo Tipo!"
-                        value={tipo}
-                        onChange={(e) => setTipo(e.target.value)}
-                    />
+                        //placeholder="Digite o Tipo do Campo"
+                        value={ tipo }
+                        onChange={ (e) => setTipo(e.target.value) }>
+                            <option value="Nenhum" selected>Nenhum</option>
+                            <option value="Texto">Caixa de Texto</option>
+                            <option value="Numero">Numero</option>
+                            <option value="Select">Select</option>
+                            <option value="Checkbox">Checkbox</option>
+                        </select>
+                        </div>
                 </div>
+                <div><br></br></div>
 
                 <div className="field">
                     <button className="button is-primary">Atualizar</button>
