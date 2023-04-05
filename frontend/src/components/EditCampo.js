@@ -8,15 +8,15 @@ const EditCampo = () => {
     const [nome, setNome] = useState('');
     const [tipo, setTipo] = useState('');
     const navigate = useNavigate();
-    const { id } = useParams;
+    const { id } = useParams();
 
-    const updadeCampo = async (e) => {
-        e.prevevntDefaut();
+    const updateCampo = async (e) => {
+        e.preventDefault();
         await axios.patch(`http://localhost:8081/campos/${id}`, {
             nome: nome,
             tipo: tipo
         });
-        navigate.push("/");
+        navigate("/");
     }
 
     useEffect(() => {
@@ -31,16 +31,16 @@ const EditCampo = () => {
 
     return (
         <div>
-            <form onSubmit={ updadeCampo }>
+            <form onSubmit={updateCampo}>
                 <div className="field">
                     <label className="label">Nome</label>
                     <input
                         className="input"
                         type="text"
                         placeholder="Digite o novo Nome!"
-                        value={ nome }
-                        onChange={ (e) => setNome(e.target.value) }>
-                        </input>
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
+                    />
                 </div>
 
                 <div className="field">
@@ -49,9 +49,9 @@ const EditCampo = () => {
                         className="input"
                         type="text"
                         placeholder="Digite o novo Tipo!"
-                        value={ tipo }
-                        onChange={ (e) => setTipo(e.target.value) }
-                        ></input>
+                        value={tipo}
+                        onChange={(e) => setTipo(e.target.value)}
+                    />
                 </div>
 
                 <div className="field">
@@ -62,4 +62,4 @@ const EditCampo = () => {
     )
 }
 
-export default EditCampo
+export default EditCampo;
