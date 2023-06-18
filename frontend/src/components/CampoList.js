@@ -47,6 +47,7 @@ const CampoList = () => {
                     ))}
                 </tbody>
             </table>
+            <Link to="/form" className="button is-info mt-2">Ver Questionário</Link>
         </div>
     )
 }

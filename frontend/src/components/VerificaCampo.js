@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from "axios";
+import { Link } from "react-router-dom";
 //import { Link } from "react-router-dom";
 import 'bulma/css/bulma.css';
 
@@ -51,7 +52,11 @@ const VerificaCampo = () => {
                 </tr>
             ))}
             <br></br>
-            <button type='submit' className='button is-info' form='1'>Criar Formulário</button>
+            <div>
+                <button type='submit' className='button is-info' form='1'>Criar Formulário</button>
+                <br></br>
+                <Link to="/" className="button is-info mt-2">Voltar</Link>
+            </div>
         </form>
     )
 }
