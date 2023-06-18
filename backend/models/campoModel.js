@@ -3,7 +3,7 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const Form = db.define('form', {
+const Campo = db.define('campo', {
     nome:{
         type: DataTypes.STRING
     },
@@ -12,6 +12,6 @@ const Form = db.define('form', {
     }
 }, {
     freezeTableName: true
-})
+});
 
-export default Form;
+export default Campo;

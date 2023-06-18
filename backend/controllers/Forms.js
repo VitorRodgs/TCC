@@ -1,4 +1,5 @@
-import Campo from "../models/formModel.js";
+import Campo from "../models/campoModel.js";
+import Form from "../models/formModel.js";
 
 export const getAllCampos = async(req, res) => {
     try{
@@ -57,6 +58,70 @@ export const deleteCampo = async (req, res) => {
         });
         res.json({
             "message": "Campo Deletado"
+        });
+    } catch(error) {
+        res.json({message: error.message});
+    }
+}
+
+
+export const getAllForm = async(req, res) => {
+    try{
+        const forms = await Form.findAll();
+        res.json(forms);
+    } catch(error) {
+        res.json({message: error.message});
+    }
+}
+
+export const getFormById = async (req, res) => {
+    try {
+        const forms = await Form.findAll({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json(forms[0]);
+    } catch (error) {
+        res.json({message: error.message});
+    }
+}
+
+export const createForm = async (req, res) => {
+    try{
+        await Form.create(req.body);
+        res.json({
+            "message": "Form Criado"
+        });
+    } catch (error){
+        res.json({message: error.message});
+    }
+}
+
+export const updateForm = async (req, res) => {
+    try {
+        await Form.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "message": "Form Atualizado"
+        });
+    } catch (error) {
+        res.json({message: error.message});
+    }
+}
+
+export const deleteForm = async (req, res) => {
+    try{
+        await Form.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "message": "Form Deletado"
         });
     } catch(error) {
         res.json({message: error.message});

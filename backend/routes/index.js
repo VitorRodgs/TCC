@@ -5,15 +5,24 @@ import {
     createCampo,
     getCampoById,
     updateCampo,
-    deleteCampo
+    deleteCampo,
+    getAllForm,
+    createForm,
+    getFormById,
+    updateForm,
+    deleteForm
 } from "../controllers/Forms.js"
 
 const router = express.Router();
 
-router.get('/', getAllCampos);
-router.get('/:id', getCampoById);
-router.post('/', createCampo);
-router.patch('/:id', updateCampo);
-router.delete('/:id', deleteCampo);
-
+router.get('/campos', getAllCampos);
+router.get('/campos/:id', getCampoById);
+router.post('/campos', createCampo);
+router.patch('/campos/:id', updateCampo);
+router.delete('/campos/:id', deleteCampo);
+router.get('/forms', getAllForm);
+router.get('/forms/:id', getFormById);
+router.post('/forms', createForm);
+router.patch('/forms/:id', updateForm);
+router.delete('/forms/:id', deleteForm);
 export default router;
