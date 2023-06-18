@@ -1,5 +1,6 @@
 import Campo from "../models/campoModel.js";
 import Form from "../models/formModel.js";
+import Usuario from "../models/usuarioModel.js";
 
 export const getAllCampos = async(req, res) => {
     try{
@@ -122,6 +123,69 @@ export const deleteForm = async (req, res) => {
         });
         res.json({
             "message": "Form Deletado"
+        });
+    } catch(error) {
+        res.json({message: error.message});
+    }
+}
+
+export const getAllUser = async(req, res) => {
+    try{
+        const user = await Usuario.findAll();
+        res.json(user);
+    } catch(error) {
+        res.json({message: error.message});
+    }
+}
+
+export const getUserById = async (req, res) => {
+    try {
+        const user = await Usuario.findAll({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json(user[0]);
+    } catch (error) {
+        res.json({message: error.message});
+    }
+}
+
+export const createUser = async (req, res) => {
+    try{
+        await Usuario.create(req.body);
+        res.json({
+            "message": "Usuario Criado"
+        });
+    } catch (error){
+        res.json({message: error.message});
+    }
+}
+
+export const updateUser = async (req, res) => {
+    try {
+        await Usuario.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "message": "Usuario Atualizado"
+        });
+    } catch (error) {
+        res.json({message: error.message});
+    }
+}
+
+export const deleteUser = async (req, res) => {
+    try{
+        await Usuario.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json({
+            "message": "Usuario Deletado"
         });
     } catch(error) {
         res.json({message: error.message});

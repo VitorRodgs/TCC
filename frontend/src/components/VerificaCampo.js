@@ -20,10 +20,16 @@ const VerificaCampo = () => {
 
   const saveForm = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:8081/forms', {
-      nome: nome,
-      tipo: tipo
-    });
+    try {
+      await axios.post('http://localhost:8081/formularios', {
+        nome: nome,
+        tipo: tipo
+      });
+      alert('Formulário criado com sucesso!'); // Exemplo de mensagem de sucesso
+    } catch (error) {
+      console.error(error);
+      alert('Ocorreu um erro ao criar o formulário. Por favor, tente novamente.'); // Exemplo de mensagem de erro
+    }
   };
 
   function verifica(nome, tipo, id) {

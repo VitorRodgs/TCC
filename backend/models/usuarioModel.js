@@ -3,16 +3,16 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const Form = db.define('form', {
+const Usuario = db.define('usuario', {
     nome:{
         type: DataTypes.STRING
     },
-    descricao:{
+    email:{
         type: DataTypes.STRING
     }
 }, {
     freezeTableName: true,
     timestamps: false
-})
+});
 
-export default Form;
+export default Usuario;

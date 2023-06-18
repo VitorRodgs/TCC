@@ -10,9 +10,10 @@ import {
 
 const router = express.Router();
 
-router.get('/forms2', getAllForm);
-router.get('/forms/:id', getFormById);
-router.post('/forms2', createForm);
-router.patch('/forms/:id', updateForm);
-router.delete('/forms/:id', deleteForm);
+router.get('/', getAllForm);
+router.get('/:id', getFormById);
+router.post('/', createForm);
+router.patch('/:id', updateForm);
+router.delete('/:id', deleteForm);
+
 export default router;

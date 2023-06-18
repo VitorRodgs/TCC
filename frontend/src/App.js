@@ -5,6 +5,9 @@ import EditCampo from "./components/EditCampo";
 import CombinedPage from "./components/PaginaInicial";
 import 'bulma/css/bulma.css';
 import VerificaCampo from "./components/VerificaCampo";
+import AddForm from "./components/AddForm";
+import AddUsuario from "./components/AddUsuario";
+import AddPergunta from "./components/AddPergunta";
 
 function App() {
   return (
@@ -22,6 +25,12 @@ function App() {
               <Route path="/form" element={<VerificaCampo/>}>
               </Route>
               <Route path="/combined" element={<CombinedPage/>}>
+              </Route>
+              <Route path="/addform" element={<AddForm/>}>
+              </Route>
+              <Route path="/paginainicial" element={<AddUsuario/>}>
+              </Route>
+              <Route path="/addpergunta" element={<AddPergunta/>}>
               </Route>
             </Routes>
           </div>
