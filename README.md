@@ -4,8 +4,10 @@ Este projeto de Trabalho de Conclusão de Curso (TCC) visa desenvolver um gerado
 
 ## Funcionalidades
 
-- **Criação de questionários:** Os usuários poderão criar questionários personalizados, definindo títulos, descrições, tipos de pergunta e opções de resposta.
-- **Edição e exclusão de questionários:** Os usuários terão a capacidade de editar e excluir questionários existentes.
+- **Criação de questionários:** Os usuários poderão criar questionários , definindo títulos, descrições, tipos de pergunta e opções de resposta.
+- **Edição e exclusão de perguntas:** Os usuários terão a capacidade de editar e excluir perguntas existentes.
+
+## Possíveis Upgrades Ainda Não Implementados
 - **Geração automática de perguntas:** Será implementada a funcionalidade de gerar automaticamente perguntas com base em uma base de conhecimento pré-definida.
 - **Compartilhamento de questionários:** Os usuários poderão compartilhar seus questionários com outras pessoas através de um link único.
 - **Respostas e análises:** As respostas dos questionários serão coletadas e os resultados serão apresentados ao criador do questionário em formato visual para análise.
